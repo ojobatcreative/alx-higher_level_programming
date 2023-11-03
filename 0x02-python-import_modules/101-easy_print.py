@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import python_for_me
+
+import my_python_print
