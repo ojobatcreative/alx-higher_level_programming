@@ -7,8 +7,8 @@ N non-attacking queens on an NxN chessboard.
 N must be an integer greater than or equal to 4.
 
 Attributes:
-    board (list): A list of lists representing the chessboard.
-    solutions (list): A list of lists containing solutions.
+    board (list): A 2D list representing the chessboard.
+    solutions (list): A list of solutions containing solutions.
 
 Solutions are represented in the format [[r, c], [r, c], [r, c], [r, c]]
 where `r` and `c` represent the row and column, respectively, where a
@@ -42,11 +42,10 @@ def get_solution(board):
     return (solution)
 
 
-def xout(board, row, col):
-    """X out spots on a chessboard.
+def mark_out(board, row, col):
+    """Mark out spots on a chessboard.
 
-    All spots where non-attacking queens can no
-    longer be played are X-ed out.
+    Mark out spots where queens can no longer be played
 
     Args:
         board (list): The current working chessboard.
