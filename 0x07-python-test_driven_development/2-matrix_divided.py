@@ -2,6 +2,7 @@
 
 """This function defines a matrix division"""
 
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a given number.
@@ -33,4 +34,5 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
+
     return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
