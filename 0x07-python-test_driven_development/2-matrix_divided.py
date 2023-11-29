@@ -8,7 +8,8 @@ def matrix_divided(matrix, div):
     Divides all elements of a matrix by a given number.
 
     Args:
-        matrix (list of lists): The input matrix (list of lists of integers or floats).
+        matrix (list of lists): The input matrix (list of lists
+				of integers or floats).
         div (int or float): The divisor.
 
     Returns:
