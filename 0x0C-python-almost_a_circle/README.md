@@ -23,4 +23,4 @@ All tests files are inside a folder tests
 I used the unittest module
 
 
-Thank you! :)
+Thank you!☺️
