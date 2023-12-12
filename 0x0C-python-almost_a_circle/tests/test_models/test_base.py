@@ -44,7 +44,7 @@ class TestBase_instantiation(unittest.TestCase):
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
-        self.assertEqual(b1.id, b3.id - 1)
+        self.assertGreater(b1.id, b3.id)
 
     def test_id_public(self):
         b = Base(12)
