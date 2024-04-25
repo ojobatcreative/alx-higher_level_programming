@@ -1,36 +1,25 @@
 #!/usr/bin/python3
-"""
-Lists all states from the database hbtn_0e_0_usa sorted in ascending order by
-states.id
-"""
-import MySQLdb
-import sys
+"""Lists all states from the database hbtn_0e_0_usa"""
 
-
-if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
+if __name__ == '__main__':
+    from sys import argv
+    import MySQLdb as mysql
 
     try:
-        conn = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=mysql_username,
-            passwd=mysql_password,
-            db=db_name,
-            charset="utf8"
-        )
-    except MySQLdb.Error as e:
-        print("Error connecting to database: {}".format(e))
-        sys.exit(1)
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    except Exception:
+        print('Failed to connect to the database')
+        exit(0)
 
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    rows = cur.fetchall()
+    cursor = db.cursor()
 
-    for row in rows:
+    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
+
+    result_query = cursor.fetchall()
+
+    for row in result_query:
         print(row)
 
-    cur.close()
-    conn.close()
+    cursor.close()
+    db.close()
